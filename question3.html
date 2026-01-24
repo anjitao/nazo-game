@@ -2,25 +2,25 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>CASE FILE 03</title>
+<title>CASE 3</title>
 <style>
 body{background:black;color:#00ff66;font-family:Courier New;}
 .frame{border:2px solid #00ff66;padding:20px;width:600px;margin:50px auto;}
+.hint{display:none;}
 button{background:black;color:#00ff66;border:1px solid #00ff66;}
 </style>
 </head>
 
 <body>
 <div class="frame">
-<h2>CASE FILE 03</h2>
+<p>CASE 3 / 5</p>
 
-<p>問題：<br>
-口があるのに話せないものは何だ？
-</p>
+<h2>問題</h2>
+<p>口があるのに話せないものは何だ？</p>
 
-<button onclick="alert('水と深く関係している')">ヒント</button>
+<button onclick="hint.style.display='block'">ヒントを見る</button>
+<p id="hint" class="hint">水と関係がある</p>
 
-<br><br>
 <input id="answer">
 <button onclick="check()">送信</button>
 <p id="msg"></p>
@@ -28,13 +28,15 @@ button{background:black;color:#00ff66;border:1px solid #00ff66;}
 
 <script>
 function check(){
-  const a=document.getElementById("answer").value;
+  const a=answer.value;
   if(a==="川"||a==="かわ"){
     location.href="question4.html";
   }else{
-    msg.innerText="証拠不十分";
+    msg.innerText="証拠が足りない";
   }
 }
 </script>
 </body>
 </html>
+
+
