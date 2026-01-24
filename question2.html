@@ -2,38 +2,42 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>CASE FILE 02</title>
+<title>CASE 2</title>
 <style>
-body {
+body{
   background:black;
   color:#00ff66;
   font-family: "Courier New", monospace;
 }
-.frame {
+.frame{
   border:2px solid #00ff66;
   padding:20px;
   width:600px;
   margin:50px auto;
 }
-button {
+.hint{
+  display:none;
+  margin-top:10px;
+}
+button{
   background:black;
   color:#00ff66;
   border:1px solid #00ff66;
+  margin-top:10px;
 }
 </style>
 </head>
 
 <body>
 <div class="frame">
-<h2>CASE FILE 02</h2>
+<p>CASE 2 / 5</p>
 
-<p>問題：<br>
-開けると閉じ、閉じると開くものは何だ？
-</p>
+<h2>問題</h2>
+<p>開けると閉じ、閉じると開くものは何だ？</p>
 
-<button onclick="alert('紙をまとめる道具だ')">ヒント</button>
+<button onclick="showHint()">ヒントを見る</button>
+<p id="hint" class="hint">紙をまとめる文房具だ</p>
 
-<br><br>
 <input id="answer">
 <button onclick="check()">送信</button>
 
@@ -41,12 +45,15 @@ button {
 </div>
 
 <script>
+function showHint(){
+  document.getElementById("hint").style.display="block";
+}
 function check(){
-  const a = document.getElementById("answer").value;
-  if(a==="はさみ" || a==="ハサミ"){
+  const a=document.getElementById("answer").value;
+  if(a==="はさみ"||a==="ハサミ"){
     location.href="question3.html";
   }else{
-    document.getElementById("msg").innerText="不正解…再調査せよ";
+    msg.innerText="違う…もう一度考えろ";
   }
 }
 </script>
