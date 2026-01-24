@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>CASE FILE 02</title>
+<style>
+body {
+  background:black;
+  color:#00ff66;
+  font-family: "Courier New", monospace;
+}
+.frame {
+  border:2px solid #00ff66;
+  padding:20px;
+  width:600px;
+  margin:50px auto;
+}
+button {
+  background:black;
+  color:#00ff66;
+  border:1px solid #00ff66;
+}
+</style>
+</head>
+
+<body>
+<div class="frame">
+<h2>CASE FILE 02</h2>
+
+<p>問題：<br>
+開けると閉じ、閉じると開くものは何だ？
+</p>
+
+<button onclick="alert('紙をまとめる道具だ')">ヒント</button>
+
+<br><br>
+<input id="answer">
+<button onclick="check()">送信</button>
+
+<p id="msg"></p>
+</div>
+
+<script>
+function check(){
+  const a = document.getElementById("answer").value;
+  if(a==="はさみ" || a==="ハサミ"){
+    location.href="question3.html";
+  }else{
+    document.getElementById("msg").innerText="不正解…再調査せよ";
+  }
+}
+</script>
+</body>
+</html>
