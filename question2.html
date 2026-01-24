@@ -7,55 +7,69 @@
 body{
   background:black;
   color:#00ff66;
-  font-family: "Courier New", monospace;
+  font-family:"Courier New", monospace;
+}
+.header{
+  border-bottom:2px solid #00ff66;
+  padding-bottom:10px;
+  margin:20px;
+}
+.status{
+  animation: blink 1.2s infinite;
+}
+@keyframes blink{
+  0%{opacity:1;}
+  50%{opacity:0.4;}
+  100%{opacity:1;}
 }
 .frame{
   border:2px solid #00ff66;
   padding:20px;
   width:600px;
-  margin:50px auto;
+  margin:20px auto;
 }
-.hint{
-  display:none;
-  margin-top:10px;
-}
+.hint{display:none;}
 button{
   background:black;
   color:#00ff66;
   border:1px solid #00ff66;
-  margin-top:10px;
 }
 </style>
 </head>
 
 <body>
+
+<div class="header">
+  <p>CASE FILE : INCIDENT-001</p>
+  <p>USER : DETECTIVE</p>
+  <p class="status">STATUS : ANALYZING...</p>
+</div>
+
 <div class="frame">
-<p>CASE 2 / 5</p>
+  <p>CASE 2 / 5</p>
+  <h2>問題</h2>
+  <p>開けると閉じ、閉じると開くものは何だ？</p>
 
-<h2>問題</h2>
-<p>開けると閉じ、閉じると開くものは何だ？</p>
+  <button onclick="hint.style.display='block'">ヒントを見る</button>
+  <p id="hint" class="hint">紙をまとめる文房具だ</p>
 
-<button onclick="showHint()">ヒントを見る</button>
-<p id="hint" class="hint">紙をまとめる文房具だ</p>
-
-<input id="answer">
-<button onclick="check()">送信</button>
-
-<p id="msg"></p>
+  <input id="answer">
+  <button onclick="check()">送信</button>
+  <p id="msg"></p>
 </div>
 
 <script>
-function showHint(){
-  document.getElementById("hint").style.display="block";
-}
 function check(){
-  const a=document.getElementById("answer").value;
+  const a=answer.value;
   if(a==="はさみ"||a==="ハサミ"){
     location.href="question3.html";
   }else{
-    msg.innerText="違う…もう一度考えろ";
+    msg.innerText="違う…再解析せよ";
   }
 }
 </script>
+
 </body>
 </html>
+
+
