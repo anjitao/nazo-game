@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>謎解き 第1問</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+      font-size: 16px;
+      padding: 8px;
+      margin-top: 10px;
+      width: 200px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 8px 16px;
+      margin-top: 10px;
+    }
+
+    #hint {
+      display: none;
+      margin-top: 15px;
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>第1問</h1>
+
+    <p>
+      「あさ・ひる・よる」<br>
+      これらに共通するものは何？
+    </p>
+
+    <input id="answer" placeholder="答えを入力">
+    <br>
+
+    <button onclick="checkAnswer()">答える</button>
+    <br>
+
+    <button onclick="showHint()">ヒントを見る</button>
+
+    <div id="hint">
+      最初の文字に注目してみよう
+    </div>
+  </div>
+
+  <script>
+    function showHint() {
+      document.getElementById("hint").style.display = "block";
+    }
+
+    function checkAnswer() {
+      const answer = document.getElementById("answer").value.trim();
+
+      if (answer === "時間" || answer === "じかん") {
+        location.href = "question2.html";
+      } else {
+        alert("違います！");
+      }
+    }
+  </script>
+
+</body>
+</html>
