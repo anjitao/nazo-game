@@ -1,42 +1,27 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>CASE 3</title>
-<style>
-body{background:black;color:#00ff66;font-family:Courier New;}
-.frame{border:2px solid #00ff66;padding:20px;width:600px;margin:50px auto;}
-.hint{display:none;}
-button{background:black;color:#00ff66;border:1px solid #00ff66;}
-</style>
+<html><head><meta charset="UTF-8"><title>3</title>
+<style>body{margin:0;background:#222;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Courier New;}
+.monitor{background:#111;border:8px solid #333;border-radius:10px;width:800px;}
+.top-bar{background:#333;padding:8px;display:flex;gap:8px;}
+.circle{width:12px;height:12px;border-radius:50%;}
+.red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}
+.screen{background:black;color:#0f0;padding:20px}
+.header{border-bottom:1px solid #0f0}
+.status{animation:blink 1s infinite}@keyframes blink{50%{opacity:0.4}}
+input,button{background:black;color:#0f0;border:1px solid #0f0}.hint{display:none}</style>
 </head>
-
 <body>
-<div class="frame">
+<div class="monitor"><div class="top-bar"><div class="circle red"></div><div class="circle yellow"></div><div class="circle green"></div></div>
+<div class="screen">
+<div class="header">CASE FILE : INCIDENT-001<br>USER : DETECTIVE<br><span class="status">STATUS : ANALYZING...</span></div>
 <p>CASE 3 / 5</p>
-
-<h2>問題</h2>
-<p>口があるのに話せないものは何だ？</p>
-
-<button onclick="hint.style.display='block'">ヒントを見る</button>
-<p id="hint" class="hint">水と関係がある</p>
-
-<input id="answer">
-<button onclick="check()">送信</button>
+<p>雨夜燕の居場所はどこ</p>
+<button onclick="hint.style.display='block'">ヒント</button>
+<p id="hint" class="hint">生徒会室</p>
+<input id="a"><button onclick="check()">送信</button>
 <p id="msg"></p>
-</div>
-
+</div></div>
 <script>
-function check(){
-  const a=answer.value;
-  if(a==="川"||a==="かわ"){
-    location.href="question4.html";
-  }else{
-    msg.innerText="証拠が足りない";
-  }
-}
+function check(){if(a.value==="生徒会室"){location.href="question4.html";}else{msg.innerText="ERROR";}}
 </script>
-</body>
-</html>
-
-
+</body></html>
