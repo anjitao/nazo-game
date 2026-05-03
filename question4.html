@@ -42,7 +42,9 @@ function check(){
   if(a.value==="rtu"){
     localStorage.setItem("nextPage","question5.html");
     location.href="back.html";
-  }else{alert("違う");}
+ else{
+  localStorage.setItem("returnPage","question4.html");
+  location.href="fail.html";
 }
 
 let step=0;
