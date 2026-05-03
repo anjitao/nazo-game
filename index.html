@@ -10,15 +10,26 @@ body{
   height:100vh;
   overflow:hidden;
   font-family:sans-serif;
-  background: linear-gradient(-45deg, #0078d7, #00a2ff, #005bb5, #0099ff);
-  background-size: 400% 400%;
-  animation: wave 10s ease infinite;
+  background:#0078d7;
 }
 
-@keyframes wave {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* 波 */
+.wave{
+  position:absolute;
+  bottom:0;
+  width:200%;
+  height:200px;
+  background: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>\
+  <path fill='%2300a2ff' fill-opacity='1' d='M0,160L48,165.3C96,171,192,181,288,165.3C384,149,480,107,576,96C672,85,768,107,864,122.7C960,139,1056,149,1152,133.3C1248,117,1344,75,1392,53.3L1440,32L1440,320L0,320Z'></path>\
+  </svg>");
+  background-repeat: repeat-x;
+  animation: waveMove 10s linear infinite;
+}
+
+@keyframes waveMove{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
 }
 
 /* アイコン */
@@ -28,11 +39,14 @@ body{
   color:white;
   cursor:pointer;
   margin:20px;
+  position:relative;
+  z-index:2;
 }
 .icon img{
   width:50px;
 }
 
+/* タスクバー */
 .taskbar{
   position:fixed;
   bottom:0;
@@ -43,17 +57,23 @@ body{
   display:flex;
   align-items:center;
   padding-left:10px;
+  z-index:2;
 }
 </style>
 </head>
 
 <body>
 
+<!-- 波 -->
+<div class="wave"></div>
+
+<!-- アイコン -->
 <div class="icon" onclick="location.href='question1.html'">
   <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
   <div>ファイル</div>
 </div>
 
+<!-- タスクバー -->
 <div class="taskbar">
   🔍 検索
 </div>
