@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>謎1</title>
+<title>ファイル</title>
 <style>
-body{font-family:sans-serif;text-align:center;}
+body{text-align:center;font-family:sans-serif;}
 #hint{display:none;}
 </style>
 </head>
@@ -12,26 +12,18 @@ body{font-family:sans-serif;text-align:center;}
 <body>
 
 <h2>小箱を開けろ</h2>
-<p>パスワードを入力してください（半角数字）</p>
+<p>パスワードを入力（半角数字）</p>
 
-<button onclick="showHint()">ヒント</button>
-<p id="hint">
-莉波：6が3回出ている…<br>
-広：ハ・ホ・ヘ…<br>
-星南：あいうえお表で考えて
-</p>
+<button onclick="hint.style.display='block'">ヒント</button>
+<p id="hint">答えは 4969</p>
 
 <input id="a">
 <button onclick="check()">送信</button>
 
 <script>
-function showHint(){
-  hint.style.display="block";
-}
 function check(){
   if(a.value==="4969"){
-    alert("小箱が開いた！");
-    location.href="nazo2.html";
+    location.href="question2.html";
   }else{
     alert("違う");
   }
