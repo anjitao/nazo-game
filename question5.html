@@ -42,7 +42,9 @@ function check(){
   if(a.value==="ダンスレッスン室"){
     localStorage.setItem("nextPage","question6.html");
     location.href="back.html";
-  }else{alert("違う");}
+else{
+  localStorage.setItem("returnPage","question5.html");
+  location.href="fail.html";
 }
 
 let step=0;
