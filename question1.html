@@ -1,36 +1,42 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>1</title>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>謎1</title>
 <style>
-body{margin:0;height:100vh;background:url("https://wallpaperaccess.com/full/317501.jpg") no-repeat center/cover;}
-.window{width:600px;background:white;margin:100px auto;border:1px solid #aaa;}
-.title{background:#0078d7;color:white;padding:8px;}
-.content{padding:20px;text-align:center;}
+body{font-family:sans-serif;text-align:center;}
 #hint{display:none;}
 </style>
 </head>
 
 <body>
-<div class="window">
-<div class="title">捜査端末.exe</div>
 
-<div class="content">
-<p>CASE 1 / 5</p>
-<p>パスワードを入力せよ</p>
+<h2>小箱を開けろ</h2>
+<p>パスワードを入力してください（半角数字）</p>
 
-<button onclick="hint.style.display='block'">ヒント</button>
-<p id="hint">4969</p>
+<button onclick="showHint()">ヒント</button>
+<p id="hint">
+莉波：6が3回出ている…<br>
+広：ハ・ホ・ヘ…<br>
+星南：あいうえお表で考えて
+</p>
 
-<input id="a"><br><br>
+<input id="a">
 <button onclick="check()">送信</button>
-<p id="msg"></p>
-</div>
-</div>
 
 <script>
+function showHint(){
+  hint.style.display="block";
+}
 function check(){
-if(a.value==="4969"){
-location.href="q2.html";
-}else{msg.innerText="違う";}
+  if(a.value==="4969"){
+    alert("小箱が開いた！");
+    location.href="nazo2.html";
+  }else{
+    alert("違う");
+  }
 }
 </script>
-</body></html>
+
+</body>
+</html>
