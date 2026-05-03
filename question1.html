@@ -19,27 +19,15 @@ body{
   border-radius:10px;
   text-align:center;
 }
-.hint-area{
-  display:none;
-  margin-top:20px;
-  align-items:flex-start;
-  gap:15px;
-}
+.hint-area{display:none;margin-top:20px;align-items:flex-start;gap:15px;}
 .chara{width:120px;}
-.bubble{
-  background:white;
-  padding:10px;
-  border-radius:10px;
-  position:relative;
-}
-.bubble:before{
-  content:"";
-  position:absolute;
-  left:-10px;
-  top:15px;
-  border:10px solid transparent;
-  border-right:10px solid white;
-}
+.bubble{padding:10px;border-radius:10px;color:white;position:relative;}
+.riha{background:#2196f3;}
+.riha:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #2196f3;}
+.hiro{background:#4caf50;}
+.hiro:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #4caf50;}
+.seinan{background:#9c27b0;}
+.seinan:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #9c27b0;}
 </style>
 </head>
 
@@ -56,8 +44,8 @@ body{
 <button onclick="showHint()">ヒント</button>
 
 <div id="hint" class="hint-area">
-  <img id="chara" src="" class="chara">
-  <div class="bubble" id="hintText"></div>
+<img id="chara" src="" class="chara">
+<div id="hintText" class="bubble"></div>
 </div>
 
 </div>
@@ -65,7 +53,8 @@ body{
 <script>
 function check(){
   if(a.value==="4969"){
-    location.href="question2.html";
+    localStorage.setItem("nextPage","question2.html");
+    location.href="back.html";
   }else{alert("違う");}
 }
 
@@ -76,14 +65,17 @@ function showHint(){
   if(step==1){
     hintText.innerHTML="莉波：6が3回出ている…";
     chara.src="riha.png";
+    hintText.className="bubble riha";
   }
   else if(step==2){
     hintText.innerHTML="広：ハ・ホ・ヘ…";
     chara.src="hiro.png";
+    hintText.className="bubble hiro";
   }
   else if(step==3){
     hintText.innerHTML="星南：あいうえお表で考えて";
     chara.src="seinan.png";
+    hintText.className="bubble seinan";
   }
 }
 </script>
