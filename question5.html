@@ -1,29 +1,59 @@
 <!DOCTYPE html>
 <html>
-<body style="text-align:center">
+<head>
+<meta charset="UTF-8">
+<title>ファイル</title>
 
+<style>
+body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;}
+.box{width:600px;margin:80px auto;background:rgba(255,255,255,0.9);padding:20px;text-align:center;}
+.hint-area{display:none;margin-top:20px;display:flex;gap:20px;}
+</style>
+</head>
+
+<body>
+
+<div class="box">
 <h2>二人の居場所</h2>
 
 <input id="a">
 <button onclick="check()">送信</button>
 
+<br><br>
+<button onclick="showHint()">ヒント</button>
+
+<div id="hint" class="hint-area">
+<img id="chara" src="riha.png" width="120">
+<div id="hintText"></div>
+</div>
+
+</div>
+
 <script>
 function check(){
   if(a.value==="ダンスレッスン室"){
     location.href="question6.html";
-  }else{
-    alert("違う");
+  }else{alert("違う");}
+}
+
+let step=0;
+function showHint(){
+  hint.style.display="flex";
+  step++;
+  if(step==1){
+    hintText.innerHTML="生徒会の一員";
+    chara.src="riha.png";
+  }
+  else if(step==2){
+    hintText.innerHTML="今の時刻を確認";
+    chara.src="hiro.png";
+  }
+  else if(step==3){
+    hintText.innerHTML="居場所確認方法を思い出せ";
+    chara.src="seinan.png";
   }
 }
 </script>
 
 </body>
-  body{
-  margin:0;
-  height:100vh;
-  font-family:sans-serif;
-
-  background: url("haikei.jpg") no-repeat center center;
-  background-size: cover;
-}
 </html>
