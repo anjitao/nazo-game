@@ -8,9 +8,21 @@
 body{
   margin:0;
   height:100vh;
-  background: linear-gradient(135deg, #0078d7, #00a2ff);
+  overflow:hidden;
   font-family:sans-serif;
+  background: linear-gradient(-45deg, #0078d7, #00a2ff, #005bb5, #0099ff);
+  background-size: 400% 400%;
+  animation: wave 10s ease infinite;
 }
+
+/* 波っぽいアニメーション */
+@keyframes wave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* アイコン */
 .icon{
   width:80px;
   text-align:center;
@@ -21,6 +33,8 @@ body{
 .icon img{
   width:50px;
 }
+
+/* タスクバー */
 .taskbar{
   position:fixed;
   bottom:0;
@@ -42,7 +56,9 @@ body{
   <div>ファイル</div>
 </div>
 
-<div class="taskbar">🔍 検索</div>
+<div class="taskbar">
+  🔍 検索
+</div>
 
 </body>
 </html>
