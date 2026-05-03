@@ -1,60 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>謎2</title>
-<style>
-body{text-align:center;font-family:sans-serif;}
-.box{
-  display:inline-block;
-  padding:10px;
-  margin:5px;
-  border:1px solid black;
-  cursor:pointer;
-}
-#answer{
-  border:2px dashed black;
-  min-height:50px;
-}
-</style>
-</head>
+<body style="text-align:center">
 
-<body>
+<h2>三人の共通点</h2>
+<p>口・指・髪 を入力</p>
 
-<h2>三人の共通点を探せ</h2>
-
-<div id="items">
-<div class="box" onclick="select(this)">頭</div>
-<div class="box" onclick="select(this)">腕</div>
-<div class="box" onclick="select(this)">足</div>
-<div class="box" onclick="select(this)">手</div>
-<div class="box" onclick="select(this)">指</div>
-<div class="box" onclick="select(this)">目</div>
-<div class="box" onclick="select(this)">髪</div>
-<div class="box" onclick="select(this)">爪</div>
-<div class="box" onclick="select(this)">肩</div>
-<div class="box" onclick="select(this)">口</div>
-</div>
-
-<h3>選択欄</h3>
-<div id="answer"></div>
-
-<button onclick="check()">判定</button>
+<input id="a">
+<button onclick="check()">送信</button>
 
 <script>
-let selected=[];
-
-function select(el){
-  const t=el.innerText;
-  if(!selected.includes(t)){
-    selected.push(t);
-    answer.innerHTML+=t+" ";
-  }
-}
-
 function check(){
-  if(selected.includes("口") && selected.includes("指") && selected.includes("髪")){
-    location.href="nazo3.html";
+  if(a.value==="口指髪"){
+    location.href="question3.html";
   }else{
     alert("違う");
   }
