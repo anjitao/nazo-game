@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>ファイル</title>
+
 <style>
-body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;}
-.box{width:600px;margin:80px auto;background:rgba(255,255,255,0.9);padding:20px;text-align:center;}
+body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;font-family:sans-serif;}
+.box{width:600px;margin:80px auto;background:rgba(255,255,255,0.9);padding:20px;border-radius:10px;text-align:center;}
 .hint-area{display:none;margin-top:20px;align-items:flex-start;gap:15px;}
 .chara{width:120px;}
-.bubble{background:white;padding:10px;border-radius:10px;position:relative;}
-.bubble:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid white;}
+.bubble{padding:10px;border-radius:10px;color:white;position:relative;}
+.riha{background:#2196f3;}
+.riha:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #2196f3;}
+.hiro{background:#4caf50;}
+.hiro:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #4caf50;}
+.seinan{background:#9c27b0;}
+.seinan:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #9c27b0;}
 </style>
 </head>
 
@@ -26,7 +32,7 @@ body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;}
 
 <div id="hint" class="hint-area">
 <img id="chara" src="" class="chara">
-<div class="bubble" id="hintText"></div>
+<div id="hintText" class="bubble"></div>
 </div>
 
 </div>
@@ -34,7 +40,8 @@ body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;}
 <script>
 function check(){
   if(a.value==="ダンスレッスン室"){
-    location.href="question6.html";
+    localStorage.setItem("nextPage","question6.html");
+    location.href="back.html";
   }else{alert("違う");}
 }
 
@@ -42,9 +49,9 @@ let step=0;
 function showHint(){
   hint.style.display="flex";
   step++;
-  if(step==1){hintText.innerHTML="生徒会"; chara.src="riha.png";}
-  else if(step==2){hintText.innerHTML="時間確認"; chara.src="hiro.png";}
-  else if(step==3){hintText.innerHTML="居場所確認"; chara.src="seinan.png";}
+  if(step==1){hintText.innerHTML="生徒会"; chara.src="riha.png"; hintText.className="bubble riha";}
+  else if(step==2){hintText.innerHTML="時間確認"; chara.src="hiro.png"; hintText.className="bubble hiro";}
+  else if(step==3){hintText.innerHTML="居場所確認"; chara.src="seinan.png"; hintText.className="bubble seinan";}
 }
 </script>
 
