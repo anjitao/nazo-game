@@ -42,7 +42,9 @@ function check(){
   if(a.value==="＝＝＝をかける"){
     localStorage.setItem("nextPage","clear.html");
     location.href="back.html";
-  }else{alert("違う");}
+ else{
+  localStorage.setItem("returnPage","question6.html");
+  location.href="fail.html";
 }
 
 let step=0;
