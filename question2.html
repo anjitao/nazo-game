@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>2</title>
-<style>body{margin:0;background:#222;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Courier New;}
-.monitor{background:#111;border:8px solid #333;border-radius:10px;width:800px;}
-.top-bar{background:#333;padding:8px;display:flex;gap:8px;}
-.circle{width:12px;height:12px;border-radius:50%;}
-.red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}
-.screen{background:black;color:#0f0;padding:20px}
-.header{border-bottom:1px solid #0f0}
-.status{animation:blink 1s infinite}@keyframes blink{50%{opacity:0.4}}
-input,button{background:black;color:#0f0;border:1px solid #0f0}.hint{display:none}</style>
+<html><head><meta charset="UTF-8"><title>1</title>
+<style>
+body{margin:0;height:100vh;background:url("https://wallpaperaccess.com/full/317501.jpg") no-repeat center/cover;}
+.window{width:600px;background:white;margin:100px auto;border:1px solid #aaa;}
+.title{background:#0078d7;color:white;padding:8px;}
+.content{padding:20px;text-align:center;}
+#hint{display:none;}
+</style>
 </head>
+
 <body>
-<div class="monitor"><div class="top-bar"><div class="circle red"></div><div class="circle yellow"></div><div class="circle green"></div></div>
-<div class="screen">
-<div class="header">CASE FILE : INCIDENT-001<br>USER : DETECTIVE<br><span class="status">STATUS : ANALYZING...</span></div>
-<p>CASE 2 / 5</p>
-<p>三人の共通点を探せ</p>
+<div class="window">
+<div class="title">捜査端末.exe</div>
+
+<div class="content">
+<p>CASE 1 / 5</p>
+<p>パスワードを入力せよ</p>
+
 <button onclick="hint.style.display='block'">ヒント</button>
-<p id="hint" class="hint">適当に答えを決めてOK</p>
-<input id="a"><button onclick="check()">送信</button>
+<p id="hint">4969</p>
+
+<input id="a"><br><br>
+<button onclick="check()">送信</button>
 <p id="msg"></p>
-</div></div>
+</div>
+</div>
+
 <script>
-function check(){if(a.value==="答え"){location.href="question3.html";}else{msg.innerText="ERROR";}}
+function check(){
+if(a.value==="4969"){
+location.href="q2.html";
+}else{msg.innerText="違う";}
+}
 </script>
 </body></html>
