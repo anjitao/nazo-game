@@ -2,54 +2,114 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>CASE 1</title>
+<title>捜査PC</title>
 
 <style>
-body{margin:0;background:#222;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Courier New;}
-.monitor{background:#111;border:8px solid #333;border-radius:10px;width:800px;}
-.top-bar{background:#333;padding:8px;display:flex;gap:8px;}
-.circle{width:12px;height:12px;border-radius:50%;}
-.red{background:#ff5f56;}
-.yellow{background:#ffbd2e;}
-.green{background:#27c93f;}
-.screen{background:black;color:#00ff66;padding:20px;}
-.header{border-bottom:1px solid #00ff66;margin-bottom:10px;}
-.status{animation:blink 1s infinite;}
-@keyframes blink{50%{opacity:0.4;}}
-input,button{background:black;color:#0f0;border:1px solid #0f0;}
-.hint{display:none;}
+body{
+  margin:0;
+  height:100vh;
+  background:url("https://wallpaperaccess.com/full/317501.jpg") no-repeat center/cover;
+  font-family: sans-serif;
+}
+
+/* タスクバー */
+.taskbar{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:40px;
+  background:#222;
+  display:flex;
+  align-items:center;
+  padding:0 10px;
+  color:white;
+}
+
+/* ウィンドウ */
+.window{
+  width:600px;
+  background:white;
+  border:1px solid #aaa;
+  position:absolute;
+  top:100px;
+  left:50%;
+  transform:translateX(-50%);
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+/* 上バー */
+.title-bar{
+  background:#0078d7;
+  color:white;
+  padding:8px;
+}
+
+/* 中身 */
+.content{
+  padding:20px;
+  text-align:center;
+}
+
+/* ボタン */
+button{
+  padding:5px 10px;
+}
+
+/* ヒント */
+#hint{
+  display:none;
+  margin-top:10px;
+}
 </style>
+
 </head>
 
 <body>
-<div class="monitor">
-<div class="top-bar"><div class="circle red"></div><div class="circle yellow"></div><div class="circle green"></div></div>
-<div class="screen">
 
-<div class="header">
-CASE FILE : INCIDENT-001<br>
-USER : DETECTIVE<br>
-<span class="status">STATUS : ANALYZING...</span>
+<!-- ウィンドウ -->
+<div class="window">
+
+  <div class="title-bar">
+    捜査端末.exe
+  </div>
+
+  <div class="content">
+
+    <p>CASE 1 / 5</p>
+
+    <h2>パスワード入力</h2>
+    <p>半角数字で入力せよ</p>
+
+    <button onclick="showHint()">ヒント</button>
+    <p id="hint">答えは 4969</p>
+
+    <input id="a"><br><br>
+    <button onclick="check()">送信</button>
+
+    <p id="msg"></p>
+
+  </div>
+
 </div>
 
-<p>CASE 1 / 5</p>
-<p>パスワードを入力してください（半角数字）</p>
-
-<button onclick="hint.style.display='block'">ヒント</button>
-<p id="hint" class="hint">答えは 4969</p>
-
-<input id="a"><br>
-<button onclick="check()">送信</button>
-<p id="msg"></p>
-
-</div></div>
+<!-- タスクバー -->
+<div class="taskbar">
+  🔍 ここに入力して検索
+</div>
 
 <script>
+function showHint(){
+  document.getElementById("hint").style.display="block";
+}
+
 function check(){
-if(a.value==="4969"){
-location.href="question2.html";
-}else{msg.innerText="ACCESS DENIED";}
+  if(a.value==="4969"){
+    location.href="question2.html";
+  }else{
+    msg.innerText="パスワードが違います";
+  }
 }
 </script>
+
 </body>
 </html>
