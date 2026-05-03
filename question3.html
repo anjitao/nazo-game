@@ -42,7 +42,9 @@ function check(){
   if(a.value==="生徒会室"){
     localStorage.setItem("nextPage","question4.html");
     location.href="back.html";
-  }else{alert("違う");}
+ else{
+  localStorage.setItem("returnPage","question3.html");
+  location.href="fail.html";
 }
 
 let step=0;
