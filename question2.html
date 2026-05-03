@@ -43,9 +43,11 @@ function check(){
   if(a.value==="口指髪"){
     localStorage.setItem("nextPage","question3.html");
     location.href="back.html";
-  }else{alert("違う");}
+  
+else{
+  localStorage.setItem("returnPage","question2.html");
+  location.href="fail.html";
 }
-
 let step=0;
 function showHint(){
   hint.style.display="flex";
