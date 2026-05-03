@@ -2,14 +2,26 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>捜査PC</title>
+<title>デスクトップ</title>
 
 <style>
 body{
   margin:0;
   height:100vh;
   background:url("https://wallpaperaccess.com/full/317501.jpg") no-repeat center/cover;
-  font-family: sans-serif;
+  font-family:sans-serif;
+}
+
+/* アイコン */
+.icon{
+  width:80px;
+  text-align:center;
+  color:white;
+  cursor:pointer;
+  margin:20px;
+}
+.icon img{
+  width:50px;
 }
 
 /* タスクバー */
@@ -19,95 +31,28 @@ body{
   width:100%;
   height:40px;
   background:#222;
+  color:white;
   display:flex;
   align-items:center;
-  padding:0 10px;
-  color:white;
-}
-
-/* ウィンドウ */
-.window{
-  width:600px;
-  background:white;
-  border:1px solid #aaa;
-  position:absolute;
-  top:100px;
-  left:50%;
-  transform:translateX(-50%);
-  box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-/* 上バー */
-.title-bar{
-  background:#0078d7;
-  color:white;
-  padding:8px;
-}
-
-/* 中身 */
-.content{
-  padding:20px;
-  text-align:center;
-}
-
-/* ボタン */
-button{
-  padding:5px 10px;
-}
-
-/* ヒント */
-#hint{
-  display:none;
-  margin-top:10px;
+  padding-left:10px;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- ウィンドウ -->
-<div class="window">
-
-  <div class="title-bar">
-    捜査端末.exe
-  </div>
-
-  <div class="content">
-
-    <p>CASE 1 / 5</p>
-
-    <h2>パスワード入力</h2>
-    <p>半角数字で入力せよ</p>
-
-    <button onclick="showHint()">ヒント</button>
-    <p id="hint">答えは 4969</p>
-
-    <input id="a"><br><br>
-    <button onclick="check()">送信</button>
-
-    <p id="msg"></p>
-
-  </div>
-
+<div class="icon" onclick="openApp('q1.html')">
+  <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
+  <div>捜査端末</div>
 </div>
 
-<!-- タスクバー -->
 <div class="taskbar">
   🔍 ここに入力して検索
 </div>
 
 <script>
-function showHint(){
-  document.getElementById("hint").style.display="block";
-}
-
-function check(){
-  if(a.value==="4969"){
-    location.href="question2.html";
-  }else{
-    msg.innerText="パスワードが違います";
-  }
+function openApp(url){
+  window.location.href = url;
 }
 </script>
 
