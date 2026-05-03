@@ -3,18 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>ファイル</title>
-
 <style>
 body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;}
 .box{width:600px;margin:80px auto;background:rgba(255,255,255,0.9);padding:20px;text-align:center;}
-.hint-area{display:none;margin-top:20px;display:flex;gap:20px;}
+.hint-area{display:none;margin-top:20px;align-items:flex-start;gap:15px;}
+.chara{width:120px;}
+.bubble{background:white;padding:10px;border-radius:10px;position:relative;}
+.bubble:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid white;}
 </style>
 </head>
 
 <body>
-
 <div class="box">
-<h2>企画資料を開けろ</h2>
+
+<h2>企画資料</h2>
 
 <input id="a">
 <button onclick="check()">送信</button>
@@ -23,8 +25,8 @@ body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;}
 <button onclick="showHint()">ヒント</button>
 
 <div id="hint" class="hint-area">
-<img id="chara" src="riha.png" width="120">
-<div id="hintText"></div>
+<img id="chara" src="" class="chara">
+<div class="bubble" id="hintText"></div>
 </div>
 
 </div>
