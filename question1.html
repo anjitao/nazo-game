@@ -55,7 +55,9 @@ function check(){
   if(a.value==="4969"){
     localStorage.setItem("nextPage","question2.html");
     location.href="back.html";
-  }else{alert("違う");}
+  else{
+  localStorage.setItem("returnPage","question1.html");
+  location.href="fail.html";
 }
 
 let step=0;
