@@ -1,27 +1,65 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8">
-<style>body{margin:0;height:100vh;background:url("https://wallpaperaccess.com/full/317501.jpg") no-repeat center/cover;}
-.window{width:600px;background:white;margin:100px auto;border:1px solid #aaa;}
-.title{background:#0078d7;color:white;padding:8px;}
-.content{padding:20px;text-align:center;}
-#hint{display:none;}</style></head>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>謎2</title>
+<style>
+body{text-align:center;font-family:sans-serif;}
+.box{
+  display:inline-block;
+  padding:10px;
+  margin:5px;
+  border:1px solid black;
+  cursor:pointer;
+}
+#answer{
+  border:2px dashed black;
+  min-height:50px;
+}
+</style>
+</head>
 
 <body>
-<div class="window"><div class="title">捜査端末.exe</div>
-<div class="content">
-<p>CASE 2 / 5</p>
-<p>三人の共通点を探せ</p>
-<button onclick="hint.style.display='block'">ヒント</button>
-<p id="hint">自由に設定OK</p>
-<input id="a"><button onclick="check()">送信</button>
-<p id="msg"></p>
-</div></div>
+
+<h2>三人の共通点を探せ</h2>
+
+<div id="items">
+<div class="box" onclick="select(this)">頭</div>
+<div class="box" onclick="select(this)">腕</div>
+<div class="box" onclick="select(this)">足</div>
+<div class="box" onclick="select(this)">手</div>
+<div class="box" onclick="select(this)">指</div>
+<div class="box" onclick="select(this)">目</div>
+<div class="box" onclick="select(this)">髪</div>
+<div class="box" onclick="select(this)">爪</div>
+<div class="box" onclick="select(this)">肩</div>
+<div class="box" onclick="select(this)">口</div>
+</div>
+
+<h3>選択欄</h3>
+<div id="answer"></div>
+
+<button onclick="check()">判定</button>
 
 <script>
+let selected=[];
+
+function select(el){
+  const t=el.innerText;
+  if(!selected.includes(t)){
+    selected.push(t);
+    answer.innerHTML+=t+" ";
+  }
+}
+
 function check(){
-if(a.value==="答え"){
-location.href="q3.html";
-}else{msg.innerText="違う";}
+  if(selected.includes("口") && selected.includes("指") && selected.includes("髪")){
+    location.href="nazo3.html";
+  }else{
+    alert("違う");
+  }
 }
 </script>
-</body></html>
+
+</body>
+</html>
