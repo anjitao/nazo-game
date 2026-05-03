@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>5</title>
-<style>body{margin:0;background:#222;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Courier New;}
-.monitor{background:#111;border:8px solid #333;border-radius:10px;width:800px;}
-.top-bar{background:#333;padding:8px;display:flex;gap:8px;}
-.circle{width:12px;height:12px;border-radius:50%;}
-.red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}
-.screen{background:black;color:#0f0;padding:20px}
-.header{border-bottom:1px solid #0f0}
-.status{animation:blink 1s infinite}@keyframes blink{50%{opacity:0.4}}
-input,button{background:black;color:#0f0;border:1px solid #0f0}.hint{display:none}</style>
-</head>
+<html><head><meta charset="UTF-8">
+<style>body{margin:0;height:100vh;background:url("https://wallpaperaccess.com/full/317501.jpg") no-repeat center/cover;}
+.window{width:600px;background:white;margin:100px auto;border:1px solid #aaa;}
+.title{background:#0078d7;color:white;padding:8px;}
+.content{padding:20px;text-align:center;}
+</style></head>
+
 <body>
-<div class="monitor"><div class="top-bar"><div class="circle red"></div><div class="circle yellow"></div><div class="circle green"></div></div>
-<div class="screen">
-<div class="header">CASE FILE : INCIDENT-001<br>USER : DETECTIVE<br><span class="status">STATUS : ANALYZING...</span></div>
-<p>CASE 5 / 5</p>
-<p>二人の居場所はどこ</p>
+<div class="window"><div class="title">捜査端末.exe</div>
+<div class="content">
+<p>CASE 4 / 5</p>
+<p>パスワードを入力せよ</p>
 <input id="a"><button onclick="check()">送信</button>
-<p id="msg"></p>
 </div></div>
+
 <script>
-function check(){if(a.value==="ダンスレッスン室"){location.href="clear.html";}else{msg.innerText="ERROR";}}
+function check(){
+if(a.value==="1234"){
+location.href="q5.html";
+}else{alert("違う");}
+}
 </script>
 </body></html>
