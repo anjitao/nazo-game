@@ -3,39 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>ファイル</title>
-
 <style>
-body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;font-family:sans-serif;}
-.box{width:600px;margin:80px auto;background:rgba(255,255,255,0.9);padding:20px;border-radius:10px;text-align:center;}
-.hint-area{display:none;margin-top:20px;align-items:flex-start;gap:15px;}
+body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;}
+.box{width:600px;margin:80px auto;background:rgba(255,255,255,0.9);padding:20px;text-align:center;}
+.hint-area{display:none;margin-top:20px;display:flex;gap:15px;}
 .chara{width:120px;}
-.bubble{padding:10px;border-radius:10px;color:white;position:relative;}
+.bubble{padding:10px;border-radius:10px;color:white;}
 .riha{background:#2196f3;}
-.riha:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #2196f3;}
 .hiro{background:#4caf50;}
-.hiro:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #4caf50;}
 .seinan{background:#9c27b0;}
-.seinan:before{content:"";position:absolute;left:-10px;top:15px;border:10px solid transparent;border-right:10px solid #9c27b0;}
 </style>
 </head>
 
 <body>
 <div class="box">
-
-<h2>三人の共通点</h2>
-<p>口・指・髪 を入力</p>
-
+<h2>共通点</h2>
 <input id="a">
 <button onclick="check()">送信</button>
 
-<br><br>
 <button onclick="showHint()">ヒント</button>
 
 <div id="hint" class="hint-area">
-<img id="chara" src="" class="chara">
+<img id="chara" class="chara">
 <div id="hintText" class="bubble"></div>
 </div>
-
 </div>
 
 <script>
@@ -43,11 +34,12 @@ function check(){
   if(a.value==="口指髪"){
     localStorage.setItem("nextPage","question3.html");
     location.href="back.html";
-  
-else{
-  localStorage.setItem("returnPage","question2.html");
-  location.href="fail.html";
+  }else{
+    localStorage.setItem("returnPage","question2.html");
+    location.href="fail.html";
+  }
 }
+
 let step=0;
 function showHint(){
   hint.style.display="flex";
@@ -57,6 +49,5 @@ function showHint(){
   else if(step==3){hintText.innerHTML="髪"; chara.src="seinan.png"; hintText.className="bubble seinan";}
 }
 </script>
-
 </body>
 </html>
