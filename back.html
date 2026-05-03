@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ファイル</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:url("haikei.jpg") center/cover;
+  font-family:sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.box{
+  background:rgba(255,255,255,0.9);
+  padding:30px;
+  border-radius:10px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>正解だったようだ</h2>
+  <p>本誌に戻って物語を進めよう！</p>
+
+  <br>
+  <button onclick="goNext()">次へ</button>
+</div>
+
+<script>
+function goNext(){
+  const next = localStorage.getItem("nextPage");
+  location.href = next;
+}
+</script>
+
+</body>
+</html>
