@@ -1,60 +1,27 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>デスクトップ</title>
-
+<title>ファイル</title>
 <style>
 body{
   margin:0;
-  height:100vh;
-  background:url("https://wallpaperaccess.com/full/317501.jpg") no-repeat center/cover;
+  background:#1e1e1e;
+  color:white;
   font-family:sans-serif;
 }
-
-/* アイコン */
-.icon{
-  width:80px;
-  text-align:center;
-  color:white;
+.file{
+  margin:50px;
   cursor:pointer;
-  margin:20px;
-}
-.icon img{
-  width:50px;
-}
-
-/* タスクバー */
-.taskbar{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  height:40px;
-  background:#222;
-  color:white;
-  display:flex;
-  align-items:center;
-  padding-left:10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="icon" onclick="openApp('q1.html')">
-  <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
-  <div>捜査端末</div>
+<div class="file" onclick="location.href='nazo1.html'">
+📄 謎解きファイル
 </div>
-
-<div class="taskbar">
-  🔍 ここに入力して検索
-</div>
-
-<script>
-function openApp(url){
-  window.location.href = url;
-}
-</script>
 
 </body>
 </html>
