@@ -31,7 +31,7 @@ body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;font-family
 <button onclick="showHint()">ヒント</button>
 
 <div id="hint" class="hint-area">
-<img id="chara" src="" class="chara">
+<img id="chara" class="chara">
 <div id="hintText" class="bubble"></div>
 </div>
 
@@ -42,18 +42,31 @@ function check(){
   if(a.value==="生徒会室"){
     localStorage.setItem("nextPage","question4.html");
     location.href="back.html";
- else{
-  localStorage.setItem("returnPage","question3.html");
-  location.href="fail.html";
+  }else{
+    localStorage.setItem("returnPage","question3.html");
+    location.href="fail.html";
+  }
 }
 
 let step=0;
 function showHint(){
   hint.style.display="flex";
   step++;
-  if(step==1){hintText.innerHTML="今は何時？"; chara.src="riha.png"; hintText.className="bubble riha";}
-  else if(step==2){hintText.innerHTML="話を思い出せ"; chara.src="hiro.png"; hintText.className="bubble hiro";}
-  else if(step==3){hintText.innerHTML="時間と場所"; chara.src="seinan.png"; hintText.className="bubble seinan";}
+  if(step==1){
+    hintText.innerHTML="今は何時？";
+    chara.src="riha.png";
+    hintText.className="bubble riha";
+  }
+  else if(step==2){
+    hintText.innerHTML="話を思い出せ";
+    chara.src="hiro.png";
+    hintText.className="bubble hiro";
+  }
+  else if(step==3){
+    hintText.innerHTML="時間と場所";
+    chara.src="seinan.png";
+    hintText.className="bubble seinan";
+  }
 }
 </script>
 
