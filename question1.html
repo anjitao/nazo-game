@@ -3,22 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>ファイル</title>
-
 <style>
-body{
-  margin:0;
-  height:100vh;
-  background:url("haikei.jpg") center/cover;
-  font-family:sans-serif;
-}
-.box{
-  width:600px;
-  margin:80px auto;
-  background:rgba(255,255,255,0.9);
-  padding:20px;
-  border-radius:10px;
-  text-align:center;
-}
+body{margin:0;height:100vh;background:url("haikei.jpg") center/cover;font-family:sans-serif;}
+.box{width:600px;margin:80px auto;background:rgba(255,255,255,0.9);padding:20px;border-radius:10px;text-align:center;}
 .hint-area{display:none;margin-top:20px;align-items:flex-start;gap:15px;}
 .chara{width:120px;}
 .bubble{padding:10px;border-radius:10px;color:white;position:relative;}
@@ -33,21 +20,16 @@ body{
 
 <body>
 <div class="box">
-
 <h2>小箱を開けろ</h2>
-<p>パスワードを入力</p>
-
 <input id="a">
 <button onclick="check()">送信</button>
-
 <br><br>
 <button onclick="showHint()">ヒント</button>
 
 <div id="hint" class="hint-area">
-<img id="chara" src="" class="chara">
+<img id="chara" class="chara">
 <div id="hintText" class="bubble"></div>
 </div>
-
 </div>
 
 <script>
@@ -55,32 +37,20 @@ function check(){
   if(a.value==="4969"){
     localStorage.setItem("nextPage","question2.html");
     location.href="back.html";
-  else{
-  localStorage.setItem("returnPage","question1.html");
-  location.href="fail.html";
+  }else{
+    localStorage.setItem("returnPage","question1.html");
+    location.href="fail.html";
+  }
 }
 
 let step=0;
 function showHint(){
   hint.style.display="flex";
   step++;
-  if(step==1){
-    hintText.innerHTML="6が3回出ている…";
-    chara.src="riha.png";
-    hintText.className="bubble riha";
-  }
-  else if(step==2){
-    hintText.innerHTML="ハ・ホ・ヘ…";
-    chara.src="hiro.png";
-    hintText.className="bubble hiro";
-  }
-  else if(step==3){
-    hintText.innerHTML="あいうえお表で考えて";
-    chara.src="seinan.png";
-    hintText.className="bubble seinan";
-  }
+  if(step==1){hintText.innerHTML="6が3回"; chara.src="riha.png"; hintText.className="bubble riha";}
+  else if(step==2){hintText.innerHTML="ハホヘ"; chara.src="hiro.png"; hintText.className="bubble hiro";}
+  else if(step==3){hintText.innerHTML="あいうえお表"; chara.src="seinan.png"; hintText.className="bubble seinan";}
 }
 </script>
-
 </body>
 </html>
