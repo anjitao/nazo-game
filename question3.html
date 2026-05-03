@@ -1,26 +1,21 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8">
-<style>body{margin:0;height:100vh;background:url("https://wallpaperaccess.com/full/317501.jpg") no-repeat center/cover;}
-.window{width:600px;background:white;margin:100px auto;border:1px solid #aaa;}
-.title{background:#0078d7;color:white;padding:8px;}
-.content{padding:20px;text-align:center;}
-#hint{display:none;}</style></head>
+<html>
+<body style="text-align:center">
 
-<body>
-<div class="window"><div class="title">捜査端末.exe</div>
-<div class="content">
-<p>CASE 3 / 5</p>
-<p>居場所はどこ？</p>
-<button onclick="hint.style.display='block'">ヒント</button>
-<p id="hint">生徒会室</p>
-<input id="a"><button onclick="check()">送信</button>
-</div></div>
+<h2>雨夜燕の居場所</h2>
+
+<input id="a">
+<button onclick="check()">送信</button>
 
 <script>
 function check(){
-if(a.value==="生徒会室"){
-location.href="q4.html";
-}else{alert("違う");}
+  if(a.value==="生徒会室"){
+    location.href="nazo4.html";
+  }else{
+    alert("違う");
+  }
 }
 </script>
-</body></html>
+
+</body>
+</html>
